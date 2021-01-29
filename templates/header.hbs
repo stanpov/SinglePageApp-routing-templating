@@ -1,0 +1,22 @@
+<nav>
+    <div class="left-container">
+        <ul>
+            {{#if isLoggedIn}}
+             <li><a href="#/home" method="GET">Home</a></li>
+            <li><a href="#/destinations" method="GET">Destinations</a></li>
+            <li><a href="#/create" method="GET">Add +</a></li>
+            {{else}}
+           <li><a href="#/home" method="GET">Home</a></li>
+            <li><a href="#/login" method="GET">Login</a></li>
+            <li><a href="#/register" method="GET">Register</a></li>
+            {{/if}}
+        </ul>
+    </div>
+    {{#if isLoggedIn}}
+    <div class="right-container">
+        <span>Welcome, {{email}} |</span>
+        <a href="#/logout" method="GET" class="log-out">Logout</a>
+    </div>
+    {{else}}
+    {{/if}}
+</nav>

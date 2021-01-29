@@ -1,0 +1,22 @@
+{{>header}}
+<section id="viewCatalog" class="background-img">
+             {{#if isLoggedIn}}
+            <div class="added-destinations">
+                {{#each trips}}
+                <a href="#/details/{{id}}" method="GET" class="added-destination">
+                    <img src="{{this.imgUrl}}"
+                        alt="#/details/{{id}}" method="GET" class="picture-added-destination">
+                    <h3>{{this.destination}}</h3>
+                    <span>to {{this.city}} </span><span>{{this.departureDate}}</span>
+                </a>   
+                {{else}}     
+            {{/each}}
+            {{else}}
+             <div class="guest">
+                No destinations possible! Please sign in...
+            </div> 
+            {{/if}}
+            </div>
+            
+        </section>
+        {{>footer}}
